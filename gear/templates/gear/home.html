@@ -1,8 +1,23 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-<h2>Добро пожаловать!</h2>
-<p>Теперь все страницы будут с единым фоном 🎨</p>
+<h1 class="display-6 fw-semibold mb-5 text-center">Выберите тип редуктора для подбора</h1>
+
+<div class="d-flex justify-content-center gap-4 flex-wrap mt-5">
+    <a href="{% url 'worm_reducer' %}" class="btn btn-xl btn-primary px-5 py-4 shadow-lg fs-4">
+        Подбор червячного редуктора
+    </a>
+    <a href="{% url 'planetary_reducer' %}" class="btn btn-xl btn-success px-5 py-4 shadow-lg fs-4">
+        Подбор планетарного редуктора
+    </a>
+</div>
+
+<style>
+    .btn-xl {
+        font-size: 1.5rem;
+        padding: 1.25rem 2.5rem;
+        border-radius: 0.75rem;
+    }
+</style>
 {% endblock %}

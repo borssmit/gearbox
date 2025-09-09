@@ -20,5 +20,8 @@ from gear import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('worm_reducer/', views.worm_reducer, name='worm_reducer'),
+    path('planetary_reducer/', views.planetary_reducer, name='planetary_reducer'),
+
 
 ]
