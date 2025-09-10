@@ -21,6 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('worm_reducer/', views.worm_reducer, name='worm_reducer'),
+    path('worm-reducer/one-stage/', views.worm_one_stage, name='worm_one_stage'),
+    path('worm-reducer/two-stage/', views.worm_two_stage, name='worm_two_stage'),
+    path('worm-reducer/cylindrical/', views.worm_cylindrical, name='worm_cylindrical'),
     path('planetary_reducer/', views.planetary_reducer, name='planetary_reducer'),
 
 
