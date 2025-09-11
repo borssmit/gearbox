@@ -2,50 +2,69 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-<h1 class="display-6 fw-semibold mb-5 text-center">Выберите тип редуктора для подбора</h1>
+<div class="buttons-container">
+    <div class="content-wrapper">
+        <h1 class="display-6 fw-semibold mb-4 text-center">Выберите направление</h1>
 
-<div class="d-flex flex-column align-items-center gap-4 mt-5">
-
-    <!-- Кнопка червячного редуктора -->
-    <button class="btn btn-xl btn-primary px-5 py-4 shadow-lg fs-4" type="button" data-bs-toggle="collapse"
-        data-bs-target="#wormOptions" aria-expanded="false" aria-controls="wormOptions">
-        Подбор червячного редуктора
-    </button>
-
-    <!-- Подтипы червячного редуктора в один ряд -->
-    <div class="collapse w-100 text-center" id="wormOptions">
-        <div class="d-flex justify-content-center gap-3 mt-4 flex-nowrap">
-            <a href="{% url 'worm_one_stage' %}" class="btn btn-lg btn-primary px-4 py-3 flex-fill shadow">
-                Одноступенчатый
-            </a>
-            <a href="{% url 'worm_two_stage' %}" class="btn btn-lg btn-primary px-4 py-3 flex-fill shadow">
-                Двухступенчатый
-            </a>
-            <a href="{% url 'worm_cylindrical' %}" class="btn btn-lg btn-primary px-4 py-3 flex-fill shadow">
-                Цилиндрический
-            </a>
+        <div class="grid-buttons">
+            <a href="{% url 'worm_one_stage' %}" class="btn custom-btn">Одноступенчатый</a>
+            <a href="{% url 'worm_two_stage' %}" class="btn custom-btn">Двухступенчатый</a>
+            <a href="{% url 'worm_cylindrical' %}" class="btn custom-btn">Цилиндрически-червячный</a>
+            <a href="{% url 'planetary_reducer' %}" class="btn custom-btn">Планетарный</a>
+            <a href="#" class="btn custom-btn">Дополнительная информация</a>
+            <a href="#" class="btn custom-btn">Заглушка</a>
         </div>
     </div>
-
-    <!-- Кнопка планетарного редуктора -->
-    <a href="{% url 'planetary_reducer' %}" class="btn btn-xl btn-primary px-5 py-4 shadow-lg fs-4">
-        Подбор планетарного редуктора
-    </a>
-
 </div>
 
 <style>
-    .btn-xl {
-        font-size: 1.5rem;
-        padding: 1.25rem 2.5rem;
-        border-radius: 0.75rem;
+    /* контейнер во всю высоту окна */
+    .buttons-container {
+        height: calc(100vh - 120px);
+        /* вычитаем навбар и футер */
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
     }
 
-    /* Ограничение максимальной ширины кнопок на больших экранах */
-    @media (min-width: 768px) {
-        #wormOptions .btn {
-            max-width: 220px;
-        }
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    /* сетка для кнопок */
+    .grid-buttons {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .custom-btn {
+        background-color: #0d6efd;
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 500;
+        border-radius: 1.5rem;
+        /* увеличено скругление */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .custom-btn:hover {
+        background-color: #0b5ed7;
+        color: #fff;
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 </style>
 {% endblock %}
