@@ -18,13 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from gear import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('worm_reducer/', views.worm_reducer, name='worm_reducer'),
-    path('worm-reducer/one-stage/', views.worm_one_stage, name='worm_one_stage'),
-    path('worm-reducer/two-stage/', views.worm_two_stage, name='worm_two_stage'),
-    path('worm-reducer/cylindrical/', views.worm_cylindrical, name='worm_cylindrical'),
-    path('planetary_reducer/', views.planetary_reducer, name='planetary_reducer'),
-
-
+    path("", views.home, name="home"),
+    path("w1/", views.w1, name="w1"),
+    path("w2/", views.w2, name="w2"),
+    path("cw/", views.cw, name="cw"),
+    path("planetary/", views.planetary_reducer, name="planetary"),
+    path("info/", views.info, name="info"),
+    path("stub/", views.stub, name="stub"),
 ]
