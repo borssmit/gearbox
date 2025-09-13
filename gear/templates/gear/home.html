@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Главная{% endblock %}
+{% block title %}⚙ Gearbox{% endblock %}
 
 {% block content %}
 <div class="buttons-container">
     <div class="content-wrapper">
-        <h1 class="display-6 fw-semibold mb-4 text-center">Выберите направление</h1>
+        <h1 class="display-6 fw-semibold mb-4 text-center">Виберiть потрiбну категорiю </h1>
 
         <div class="grid-buttons">
-            <a href="{% url 'w1' %}" class="custom-btn btn-1"><span>Одноступенчатый</span></a>
-            <a href="{% url 'w2' %}" class="custom-btn btn-2"><span>Двухступенчатый</span></a>
-            <a href="{% url 'cw' %}" class="custom-btn btn-3"><span>Цилиндро-червячный</span></a>
-            <a href="{% url 'planetary' %}" class="custom-btn btn-4"><span>Планетарный</span></a>
-            <a href="{% url 'info' %}" class="custom-btn btn-5"><span>Дополнительная информация</span></a>
+            <a href="{% url 'w1' %}" class="custom-btn btn-1"><span>Одноступеневий</span></a>
+            <a href="{% url 'w2' %}" class="custom-btn btn-2"><span>Двоступеневий</span></a>
+            <a href="{% url 'cw' %}" class="custom-btn btn-3"><span>Цiлiндро-черв'ячний</span></a>
+            <a href="{% url 'planetary' %}" class="custom-btn btn-4"><span>Планетарний</span></a>
+            <a href="{% url 'info' %}" class="custom-btn btn-5"><span>Додаткова iнформацiя</span></a>
             <a href="{% url 'stub' %}" class="custom-btn btn-6"><span>Заглушка</span></a>
         </div>
     </div>
