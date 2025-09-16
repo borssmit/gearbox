@@ -95,6 +95,38 @@
             font-size: clamp(12px, 3.2vw, 14px);
         }
     }
+
+    /* Таблица и контейнер — без фона */
+    .table-frame,
+    .table-box,
+    .my-adaptive-table {
+        background: transparent !important;
+    }
+
+    /* 1) Ячейки/заголовки БЕЗ заданного фона → прозрачные */
+    .my-adaptive-table td:not([style*="background"]),
+    .my-adaptive-table th:not([style*="background"]) {
+        background: transparent !important;
+    }
+
+    /* 2) Ячейки/заголовки с ЯВНО БЕЛЫМ фоном → делаем прозрачными */
+    .my-adaptive-table [style*="background:#fff"],
+    .my-adaptive-table [style*="background:#FFF"],
+    .my-adaptive-table [style*="background:#ffffff"],
+    .my-adaptive-table [style*="background:#FFFFFF"],
+    .my-adaptive-table [style*="background: white"],
+    .my-adaptive-table [style*="background:white"],
+    .my-adaptive-table [style*="background: rgb(255, 255, 255)"],
+    .my-adaptive-table [style*="background:rgb(255,255,255)"] {
+        background: transparent !important;
+    }
+
+    /* (необязательно) если у тебя встречается светло-серый как «почти белый» — тоже уберём */
+    .my-adaptive-table [style*="background:#fefefe"],
+    .my-adaptive-table [style*="background:#f7f7f7"],
+    .my-adaptive-table [style*="background:#fafafa"] {
+        background: transparent !important;
+    }
 </style>
 <div class="table-frame">
     <div class="table-box">
