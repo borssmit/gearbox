@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gear import views
+from gear.views import w1_view
 urlpatterns = [
     path("", views.home, name="home"),
     path("w1/", views.w1, name="w1"),
@@ -25,4 +26,7 @@ urlpatterns = [
     path("planetary/", views.planetary_reducer, name="planetary"),
     path("info/", views.info, name="info"),
     path("stub/", views.stub, name="stub"),
+    path("admin/", admin.site.urls),
+    path("w1/", w1_view, name="w1"),
+    
 ]
