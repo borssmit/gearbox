@@ -1,5 +1,44 @@
 {% extends "base.html" %}
 {% block title %}Планетарный{% endblock %}
 {% block content %}
-<h1>Страница: Планетарный редуктор</h1>
-{% endblock %}
+<style>
+    .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gear-table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    .gear-table th,
+    .gear-table td {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 6px;
+    }
+
+    /* Важно: разрешим перенос в первых столбцах, иначе их рвёт вширь */
+    .gear-table th:nth-child(-n+3),
+    .gear-table td:nth-child(-n+3) {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Остальные можно оставить без переносов, если нужно хранить числа в строку */
+    .gear-table td {
+        white-space: nowrap;
+    }
+</style>
+
+
+
+
+<div class="table-scroll">
+
+    <div align=center>
+        {% endblock %}
